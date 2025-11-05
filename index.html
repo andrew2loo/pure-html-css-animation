@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoCount Ecosystem — Scroll Animation (Pure HTML/CSS/SVG)</title>
+    <meta name="description" content="3×3 icon grid with sequential fade-in and SVG connecting lines drawn on scroll. No external libraries.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <h1>AutoCount Ecosystem</h1>
+            <p class="subtitle">Scroll to reveal the products and how they connect.</p>
+        </section>
+
+        <!-- Intro content to create space before the animation starts -->
+        <section class="intro" aria-label="Introduction">
+            <div style="max-width:960px;margin:0 auto;padding:0 16px;">
+                <h2>About this ecosystem</h2>
+                <p>
+                    This page demonstrates a simple, library-free animation that reveals how the AutoCount
+                    products relate to each other. The animation is intentionally triggered only when the
+                    product grid enters the viewport. Until then, the icons remain greyed out.
+                </p>
+                <p>
+                    Below is some placeholder content to provide vertical space so that the animation does not
+                    begin immediately when the page loads. This simulates a typical landing page layout with
+                    text content followed by an illustrative diagram.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis, erat nec
+                    dignissim porta, magna erat eleifend lorem, vitae finibus arcu sapien at velit. Fusce
+                    ultrices magna in iaculis hendrerit. Integer blandit est at lorem condimentum, vitae
+                    fermentum magna cursus. Sed convallis quam id tellus facilisis, id interdum nunc mattis.
+                </p>
+                <p>
+                    Vestibulum vitae sem sit amet lectus tincidunt volutpat. Sed ac est nibh. Donec faucibus
+                    tortor sed urna pulvinar, vitae vulputate risus molestie. Ut eget hendrerit ex. Praesent
+                    quis mi ut lorem posuere rutrum vel sed tellus. Phasellus feugiat nisi ac nisl congue,
+                    vitae faucibus velit ullamcorper.
+                </p>
+                <p>
+                    Aenean id arcu sed risus efficitur aliquet. Nunc id tincidunt arcu. Integer et urna a
+                    libero aliquam mattis. Proin condimentum viverra massa, at feugiat orci semper ut. Morbi
+                    ac mauris et lorem consequat blandit in non augue.
+                </p>
+                <p>
+                    Cras sed massa id risus venenatis facilisis. Donec ac porta justo. Integer porttitor,
+                    sapien sit amet sagittis tincidunt, nunc orci posuere risus, vitae sodales justo elit a
+                    ipsum. Vivamus ac semper tellus, sit amet convallis turpis. Integer commodo, urna ut
+                    rhoncus vestibulum, turpis mi bibendum elit, sit amet tempus lacus justo at sapien.
+                </p>
+                <h2 style="margin-top:32px;">Products at a glance</h2>
+                <dl>
+                    <dt><strong>AutoCount Accounting</strong></dt>
+                    <dd>Core financials: GL, AR/AP, billing, and reporting for SMEs.</dd>
+                    <dt><strong>AutoCount POS</strong></dt>
+                    <dd>Point-of-sale for retail/F&amp;B with inventory sync and promotions.</dd>
+                    <dt><strong>AutoCount Cloud Accounting</strong></dt>
+                    <dd>Browser-based accounting with real-time access and multi-location support.</dd>
+                    <dt><strong>AutoCount Payroll</strong></dt>
+                    <dd>Payroll processing, statutory compliance, payslips, and leave tracking.</dd>
+                    <dt><strong>AutoCount e-Invoicing</strong></dt>
+                    <dd>Generate and deliver compliant e-invoices; integrates with Accounting.</dd>
+                    <dt><strong>AutoCount eCommerce</strong></dt>
+                    <dd>Online storefront integration; sync products, orders, and customers.</dd>
+                    <dt><strong>AutoCount Inventory &amp; Warehouse</strong></dt>
+                    <dd>Stock, warehouse movements, and replenishment with barcode support.</dd>
+                    <dt><strong>AutoCount Mobile Sales (SFA)</strong></dt>
+                    <dd>Field sales ordering, customer info, and route coverage on mobile.</dd>
+                    <dt><strong>AutoCount Analytics (BI Dashboard)</strong></dt>
+                    <dd>KPIs and dashboards across sales, finance, and operations.</dd>
+                </dl>
+            </div>
+        </section>
+
+        <section class="grid-section" aria-label="AutoCount Product Grid">
+            <div class="grid-wrapper" id="gridWrapper">
+                <!-- SVG connection layer -->
+                <svg class="connections" id="connectionsSvg" aria-hidden="true"></svg>
+
+                <!-- 3×3 grid cards -->
+                <div class="grid" id="productGrid">
+                    <button class="card" data-index="0" aria-label="AutoCount Accounting">
+                        <span class="icon" aria-hidden="true">A</span>
+                        <span class="label">AutoCount Accounting</span>
+                    </button>
+                    <button class="card" data-index="1" aria-label="AutoCount POS">
+                        <span class="icon" aria-hidden="true">P</span>
+                        <span class="label">AutoCount POS</span>
+                    </button>
+                    <button class="card" data-index="2" aria-label="AutoCount Cloud Accounting">
+                        <span class="icon" aria-hidden="true">C</span>
+                        <span class="label">AutoCount Cloud Accounting</span>
+                    </button>
+                    <button class="card" data-index="3" aria-label="AutoCount Payroll">
+                        <span class="icon" aria-hidden="true">R</span>
+                        <span class="label">AutoCount Payroll</span>
+                    </button>
+                    <button class="card" data-index="4" aria-label="AutoCount e-Invoicing">
+                        <span class="icon" aria-hidden="true">E</span>
+                        <span class="label">AutoCount e-Invoicing</span>
+                    </button>
+                    <button class="card" data-index="5" aria-label="AutoCount eCommerce">
+                        <span class="icon" aria-hidden="true">S</span>
+                        <span class="label">AutoCount eCommerce</span>
+                    </button>
+                    <button class="card" data-index="6" aria-label="AutoCount Inventory &amp; Warehouse">
+                        <span class="icon" aria-hidden="true">I</span>
+                        <span class="label">AutoCount Inventory &amp; Warehouse</span>
+                    </button>
+                    <button class="card" data-index="7" aria-label="AutoCount Mobile Sales (SFA)">
+                        <span class="icon" aria-hidden="true">M</span>
+                        <span class="label">AutoCount Mobile Sales (SFA)</span>
+                    </button>
+                    <button class="card" data-index="8" aria-label="AutoCount Analytics (BI Dashboard)">
+                        <span class="icon" aria-hidden="true">B</span>
+                        <span class="label">AutoCount Analytics (BI Dashboard)</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
+
+
